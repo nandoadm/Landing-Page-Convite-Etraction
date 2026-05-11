@@ -4,7 +4,7 @@ const GOOGLE_IMG =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV61uPpAYRVYh9zderaModm_U6QBF_BPi7LA&s";
 
 const META_IMG =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPGLKRAyZk41LqJV0whR2usf89Ja5UZF4KTw&s";
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZO_7Z8CdGhDM_9mzXAwIv1RPlqNH8jfRGg&s";
 
 export default function Experience() {
   return (

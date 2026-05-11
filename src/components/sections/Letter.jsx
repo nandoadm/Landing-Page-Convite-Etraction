@@ -29,7 +29,7 @@ export default function Letter() {
         </Reveal>
 
         <Reveal delay={680}>
-          <div className="arrived">Você chegou.</div>
+          <div className="arrived">Entre poucos, você foi selecionado.</div>
         </Reveal>
       </div>
     </section>
