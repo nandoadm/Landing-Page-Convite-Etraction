@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/Landing-Page-Convite-Etraction/",
   build: {
-    outDir: "docs",
-  },
+    outDir: "docs"
+  }
 });

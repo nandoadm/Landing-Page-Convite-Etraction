@@ -10,7 +10,7 @@ export default function ParticleCanvas() {
     const canvas = ref.current;
     if (!canvas) return undefined;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return undefined;
 
     let raf = 0;
@@ -23,16 +23,16 @@ export default function ParticleCanvas() {
       width = window.innerWidth;
       height = window.innerHeight;
 
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
+      canvas.width = Math.max(1, Math.floor(width * dpr));
+      canvas.height = Math.max(1, Math.floor(height * dpr));
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const target = Math.min(70, Math.floor((width * height) / 22000));
+      const total = Math.min(70, Math.floor((width * height) / 22000));
 
-      particles = Array.from({ length: target }, () => ({
+      particles = Array.from({ length: total }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
         r: Math.random() * 1.2 + 0.2,
@@ -64,15 +64,16 @@ export default function ParticleCanvas() {
         ctx.fill();
       }
 
-      raf = requestAnimationFrame(draw);
+      raf = window.requestAnimationFrame(draw);
     };
 
     resize();
     draw();
 
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", resize, { passive: true });
+
     return () => {
-      cancelAnimationFrame(raf);
+      window.cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
   }, []);

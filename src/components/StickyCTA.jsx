@@ -6,13 +6,14 @@ export default function StickyCTA({ onClick }) {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      const formEl = document.getElementById("ep-form-anchor");
-      const nearForm = formEl ? window.innerHeight + y > formEl.offsetTop - 80 : false;
+      const form = document.getElementById("ep-form-anchor");
+      const nearForm = form ? window.innerHeight + y > form.offsetTop - 80 : false;
+
       setVisible(y > window.innerHeight * 0.6 && !nearForm);
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

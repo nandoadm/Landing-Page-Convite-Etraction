@@ -1,12 +1,12 @@
 export default function RadioGroup({ name }) {
-  const opts = [
+  const options = [
     { value: "Sim", label: "Sim" },
     { value: "Não", label: "Não" },
   ];
 
   return (
     <div className="ep-radio-group">
-      {opts.map((option) => (
+      {options.map((option) => (
         <label key={option.value} className="ep-radio">
           <input type="radio" name={name} value={option.value} required />
           <span className="dot" />

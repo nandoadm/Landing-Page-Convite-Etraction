@@ -7,14 +7,21 @@ const Reveal = memo(function Reveal({ children, delay = 0 }) {
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
 
-    const el = ref.current;
-    if (!el) return undefined;
+    const element = ref.current;
+    if (!element) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setShown(true);
+      return undefined;
+    }
+
+    let timer = 0;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => setShown(true), delay);
+            timer = window.setTimeout(() => setShown(true), delay);
             observer.disconnect();
           }
         });
@@ -22,8 +29,12 @@ const Reveal = memo(function Reveal({ children, delay = 0 }) {
       { threshold: 0.18, rootMargin: "0px 0px -60px 0px" }
     );
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    observer.observe(element);
+
+    return () => {
+      window.clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [delay]);
 
   return (

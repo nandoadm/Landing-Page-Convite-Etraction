@@ -19,8 +19,11 @@ export default function PremiumInvitationPage() {
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-    const timer = setTimeout(() => setIntroDone(true), reduced ? 400 : 3200);
-    return () => clearTimeout(timer);
+    const timer = window.setTimeout(() => {
+      setIntroDone(true);
+    }, reduced ? 400 : 3200);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   const scrollToForm = useCallback(() => {
@@ -31,7 +34,10 @@ export default function PremiumInvitationPage() {
   }, []);
 
   const scrollToLetter = useCallback(() => {
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
   }, []);
 
   return (
@@ -39,6 +45,7 @@ export default function PremiumInvitationPage() {
       <Background />
       <Intro done={introDone} />
       <Nav />
+
       <main style={{ visibility: introDone ? "visible" : "hidden" }}>
         <Hero onContinue={scrollToLetter} />
         <Letter />
@@ -48,6 +55,7 @@ export default function PremiumInvitationPage() {
         <FormSection />
         <Footer />
       </main>
+
       <StickyCTA onClick={scrollToForm} />
     </div>
   );

@@ -1,6 +1,6 @@
-# Convite Etraction Partner Premium
+# Landing Page Convite Etraction
 
-Projeto React/Vite com os arquivos separados.
+Projeto React/Vite com arquivos separados.
 
 ## Rodar localmente
 
@@ -9,19 +9,26 @@ npm install
 npm run dev
 ```
 
-## Build
+## Build para GitHub Pages
 
 ```bash
 npm run build
 ```
 
-## Formulário Google
+O build sai em `docs/`.
 
-Os IDs do Google Forms estão em:
+## Logo
 
-`src/config/googleForm.js`
+O arquivo da logo fica em:
 
-O formulário está em:
+```text
+public/logo-etraction.svg
+```
 
-`src/components/sections/FormSection.jsx`
-# Landing-Page-Convite-Etraction
+## Google Forms
+
+Configuração em:
+
+```text
+src/config/googleForm.js
+```

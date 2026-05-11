@@ -12,6 +12,7 @@ export default function Invitation() {
             <span className="corner br" />
 
             <div className="ep-card-label">O encontro</div>
+
             <h3>
               Um dia dentro do
               <br />
@@ -23,10 +24,12 @@ export default function Invitation() {
                 <span className="k">Data</span>
                 <span className="v gold">11 de junho</span>
               </div>
+
               <div>
                 <span className="k">Cidade</span>
                 <span className="v">São Paulo</span>
               </div>
+
               <div>
                 <span className="k">Ano</span>
                 <span className="v">MMXXVI</span>
