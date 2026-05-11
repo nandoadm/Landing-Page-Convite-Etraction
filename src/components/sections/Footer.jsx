@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="brand">
         <LogoMark variant="footer" animated={false} />
       </div>
-      <div className="meta">São Paulo · MMXXVI · Convite pessoal</div>
+      <div className="meta">São Paulo · 2026 · Convite pessoal</div>
     </footer>
   );
 }
