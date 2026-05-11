@@ -32,7 +32,7 @@ export default function Invitation() {
 
               <div>
                 <span className="k">Ano</span>
-                <span className="v">MMXXVI</span>
+                <span className="v">2026</span>
               </div>
             </div>
           </div>
