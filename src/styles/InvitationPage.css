@@ -182,9 +182,21 @@ button {
 }
 
 .ep-logo-nav img {
-  max-height: 44px;
-  object-fit: contain;
+  max-height: 40px;
+  object-fit: cover;
   object-position: left center;
+  max-width: 270px;
+}
+
+@media (max-width: 760px) {
+  .ep-logo-nav {
+    width: 150px;
+  }
+
+  .ep-logo-nav img {
+    max-height: 32px;
+    max-width: 180px;
+  }
 }
 
 .ep-logo-footer .ep-logo-frame {
@@ -1005,121 +1017,314 @@ button {
   text-transform: uppercase;
   color: var(--ivory-mute);
 }
-
+/* ============================================
+   MOBILE — Tablets pequenos e smartphones
+   ============================================ */
 @media (max-width: 760px) {
+  /* Navegação */
   .ep-nav {
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
-
   .ep-nav.scrolled {
-    padding: 12px 20px;
+    padding: 10px 18px;
   }
-
   .ep-nav-meta {
     display: none;
   }
+  .ep-nav-brand {
+    min-width: 0;
+  }
 
+  /* Logo */
   .ep-logo-nav {
-    width: 150px;
+    width: 140px;
   }
-
+  .ep-logo-nav img {
+    max-height: 30px;
+    max-width: 170px;
+  }
   .ep-logo-intro {
-    width: min(700px, 90vw);
+    width: min(700px, 86vw);
   }
-
   .ep-logo-frame {
-    padding: clamp(14px, 4vw, 24px);
+    padding: clamp(12px, 4vw, 22px);
   }
-
   .ep-logo-nav .ep-logo-frame {
     padding: 0;
   }
+  .ep-logo-footer {
+    width: min(280px, 70vw);
+    margin-bottom: 14px;
+  }
 
+  /* Seções e espaçamentos gerais */
   .ep-section {
-    padding: 90px 22px;
+    padding: 80px 20px;
+  }
+  .ep-wrap {
+    max-width: 100%;
   }
 
+  /* Hero */
   .ep-hero {
-    padding: 110px 22px 70px;
+    padding: 110px 20px 70px;
+    min-height: 100svh;
   }
-
+  .ep-hero h1 {
+    margin: 22px 0 20px;
+    font-size: clamp(36px, 9vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .ep-hero-sub {
+    font-size: clamp(15px, 4.2vw, 18px);
+    padding: 0 8px;
+    line-height: 1.5;
+  }
   .ep-hero-meta {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .ep-hero-meta .sep {
-    display: none;
-  }
-
-  .ep-card {
-    padding: 50px 26px;
-  }
-
-  .ep-card-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .ep-xp-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .ep-xp-block {
-    padding: 38px 28px;
-  }
-
-  .ep-form {
-    padding: 40px 24px;
-  }
-
-  .ep-radio-group {
-    grid-template-columns: 1fr;
-  }
-
-  .ep-sticky {
-    right: 18px;
-    bottom: 18px;
-    padding: 12px 18px;
+    gap: 8px;
+    margin-top: 40px;
     font-size: 10px;
     letter-spacing: 0.28em;
   }
+  .ep-hero-meta .sep {
+    display: none;
+  }
+  .ep-hero-cta {
+    margin-top: 56px;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+  }
+  .ep-hero-cta .arrow {
+    height: 34px;
+  }
+
+  /* Eyebrow */
+  .ep-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    gap: 10px;
+  }
+  .ep-eyebrow::before,
+  .ep-eyebrow::after {
+    width: 24px;
+  }
+
+  /* Carta */
+  .ep-letter-title {
+    margin-bottom: 40px;
+    font-size: clamp(20px, 5.2vw, 26px);
+  }
+  .ep-letter p {
+    margin-bottom: 26px;
+    font-size: clamp(19px, 5vw, 24px);
+    line-height: 1.4;
+    padding: 0 4px;
+  }
+  .ep-letter .dots {
+    margin: 22px 0;
+    font-size: 16px;
+    letter-spacing: 0.5em;
+  }
+  .ep-letter .arrived {
+    margin-top: 22px;
+    font-size: clamp(24px, 6.8vw, 34px);
+  }
+
+  /* Cartão de convite */
+  .ep-card {
+    padding: 44px 22px;
+  }
+  .ep-card h3 {
+    margin: 18px 0 40px;
+    font-size: clamp(24px, 6.4vw, 30px);
+    line-height: 1.2;
+  }
+  .ep-card-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+  }
+  .ep-card-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px 0;
+  }
+  .ep-card-grid > div {
+    gap: 6px;
+  }
+  .ep-card-grid .v {
+    font-size: 20px;
+  }
+  .ep-card .corner {
+    width: 22px;
+    height: 22px;
+  }
+  .ep-card .corner.tl,
+  .ep-card .corner.tr { top: 10px; }
+  .ep-card .corner.bl,
+  .ep-card .corner.br { bottom: 10px; }
+  .ep-card .corner.tl,
+  .ep-card .corner.bl { left: 10px; }
+  .ep-card .corner.tr,
+  .ep-card .corner.br { right: 10px; }
+
+  /* Experiência */
+  .ep-xp h2 {
+    margin: 16px 0 50px;
+    font-size: clamp(30px, 7.5vw, 42px);
+    line-height: 1.1;
+  }
+  .ep-xp-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ep-xp-block {
+    padding: 34px 24px;
+  }
+  .ep-xp-block h4 {
+    margin: 14px 0 12px;
+    font-size: 26px;
+  }
+  .ep-xp-block p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* Encerramento */
+  .ep-closing h2 {
+    margin-bottom: 32px;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.1;
+  }
+  .ep-closing .sig {
+    font-size: clamp(16px, 4.4vw, 19px);
+    padding: 0 8px;
+  }
+  .ep-divider {
+    margin: 44px auto;
+    width: 48px;
+  }
+
+  /* Formulário */
+  .ep-form {
+    padding: 36px 22px;
+  }
+  .ep-form-head {
+    margin-bottom: 36px;
+  }
+  .ep-form-head h3 {
+    margin: 12px 0 10px;
+    font-size: clamp(24px, 6.4vw, 30px);
+  }
+  .ep-form-head p {
+    font-size: 13px;
+  }
+  .ep-field {
+    margin-bottom: 26px;
+  }
+  .ep-field-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+  }
+  .ep-input {
+    font-size: 16px; /* mantém 16px para evitar zoom automático no iOS */
+    padding: 10px 0;
+  }
+  .ep-radio-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .ep-radio {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .ep-submit {
+    margin-top: 12px;
+    padding: 16px;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+  }
+  .ep-form-foot {
+    margin-top: 24px;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+  }
+
+  /* CTA fixo */
+  .ep-sticky {
+    right: 14px;
+    bottom: 14px;
+    padding: 12px 18px;
+    font-size: 10px;
+    letter-spacing: 0.26em;
+  }
+
+  /* Rodapé */
+  .ep-footer {
+    padding: 48px 22px 36px;
+  }
+  .ep-footer .meta {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    padding: 0 8px;
+  }
+
+  /* Reduz brilho/efeitos pesados para performance em mobile */
+  .ep-grain { opacity: 0.04; }
+  .ep-canvas { opacity: 0.4; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html,
-  body {
-    scroll-behavior: auto;
+/* ============================================
+   MOBILE PEQUENO — iPhone SE, Galaxy A pequenos
+   ============================================ */
+@media (max-width: 380px) {
+  .ep-nav {
+    padding: 14px 14px;
   }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
+  .ep-section {
+    padding: 70px 16px;
   }
-
-  .ep-reveal {
-    opacity: 1;
-    transform: none;
+  .ep-hero {
+    padding: 100px 16px 60px;
   }
-
-  .ep-logo.is-animated,
-  .ep-logo.is-animated img,
-  .ep-logo.is-animated .ep-logo-frame {
-    opacity: 1;
-    transform: none;
-    filter: none;
+  .ep-hero h1 {
+    font-size: clamp(30px, 9vw, 40px);
   }
-
-  .ep-logo-orbit-svg,
-  .ep-logo-reveal,
-  .ep-logo-shine {
-    display: none;
+  .ep-card {
+    padding: 36px 18px;
   }
+  .ep-card h3 {
+    font-size: clamp(22px, 6.2vw, 26px);
+  }
+  .ep-xp-block {
+    padding: 30px 20px;
+  }
+  .ep-xp-block h4 {
+    font-size: 22px;
+  }
+  .ep-form {
+    padding: 30px 18px;
+  }
+  .ep-letter p {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+}
 
-  .ep-canvas {
-    display: none;
+/* ============================================
+   LANDSCAPE em celulares — evita hero gigante
+   ============================================ */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 500px) {
+  .ep-hero {
+    min-height: auto;
+    padding: 100px 24px 60px;
+  }
+  .ep-hero h1 {
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  .ep-hero-cta {
+    margin-top: 36px;
   }
 }
