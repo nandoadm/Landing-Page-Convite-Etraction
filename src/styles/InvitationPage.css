@@ -163,16 +163,16 @@ button {
 }
 
 .ep-logo-intro {
-  width: min(760px, 84vw);
+  width: min(900px, 90vw);
 }
 
 .ep-logo-nav {
-  width: 190px;
+  width: 280px;
   transform: translateY(2px);
 }
 
 .ep-logo-footer {
-  width: min(330px, 76vw);
+  width: min(400px, 82vw);
   margin: 0 auto 18px;
 }
 
@@ -182,20 +182,20 @@ button {
 }
 
 .ep-logo-nav img {
-  max-height: 40px;
+  max-height: 64px;
   object-fit: cover;
   object-position: left center;
-  max-width: 270px;
+  max-width: 380px;
 }
 
 @media (max-width: 760px) {
   .ep-logo-nav {
-    width: 150px;
+    width: 210px;
   }
 
   .ep-logo-nav img {
-    max-height: 32px;
-    max-width: 180px;
+    max-height: 52px;
+    max-width: 260px;
   }
 }
 
@@ -440,6 +440,18 @@ button {
   font-style: italic;
   font-size: clamp(17px, 1.6vw, 21px);
   color: var(--ivory-dim);
+}
+
+.ep-hero-title {
+  margin-top: 20px;
+}
+
+.ep-hero-title h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(20px, 2.6vw, 32px);
+  letter-spacing: -0.01em;
+  color: var(--ivory);
 }
 
 .ep-hero-meta {
@@ -730,6 +742,7 @@ button {
 
 .ep-xp-block {
   position: relative;
+  height: 100%;
   padding: 54px 40px;
   background: linear-gradient(160deg, rgba(20, 15, 8, 0.55), rgba(5, 4, 2, 0.6));
   border: 1px solid var(--line-warm);
@@ -997,6 +1010,74 @@ button {
   background-position: 100% 50%;
 }
 
+/* ============================================
+   EXPERIENCE – intro & grid 3 colunas
+   ============================================ */
+.ep-xp-intro {
+  max-width: 720px;
+  margin: 0 auto 70px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ivory-dim);
+}
+
+.ep-xp-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ep-xp-grid .ep-reveal {
+  height: 100%;
+}
+
+.ep-xp-block--img {
+  overflow: hidden;
+}
+
+.ep-xp-block-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.36;
+  filter: grayscale(25%) brightness(0.5) saturate(0.9);
+  transition: opacity 0.5s ease, transform 0.7s ease;
+  z-index: 0;
+}
+
+.ep-xp-block--img:hover .ep-xp-block-bg {
+  opacity: 0.28;
+  transform: scale(1.05);
+}
+
+.ep-xp-block-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   CLOSING – novo conteúdo
+   ============================================ */
+.ep-closing-question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--ivory-mute);
+  margin-bottom: 28px;
+}
+
+.ep-closing-brand {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 42px);
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--gold-bright) 60%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+}
+
 .ep-footer {
   position: relative;
   z-index: 5;
@@ -1037,14 +1118,14 @@ button {
 
   /* Logo */
   .ep-logo-nav {
-    width: 140px;
+    width: 200px;
   }
   .ep-logo-nav img {
-    max-height: 30px;
-    max-width: 170px;
+    max-height: 50px;
+    max-width: 250px;
   }
   .ep-logo-intro {
-    width: min(700px, 86vw);
+    width: min(820px, 90vw);
   }
   .ep-logo-frame {
     padding: clamp(12px, 4vw, 22px);
@@ -1053,7 +1134,7 @@ button {
     padding: 0;
   }
   .ep-logo-footer {
-    width: min(280px, 70vw);
+    width: min(340px, 76vw);
     margin-bottom: 14px;
   }
 
@@ -1175,7 +1256,13 @@ button {
     font-size: clamp(30px, 7.5vw, 42px);
     line-height: 1.1;
   }
-  .ep-xp-grid {
+  .ep-xp-intro {
+    margin-bottom: 50px;
+    font-size: clamp(15px, 4.2vw, 18px);
+    line-height: 1.55;
+  }
+  .ep-xp-grid,
+  .ep-xp-grid--3 {
     grid-template-columns: 1fr;
     gap: 16px;
   }
@@ -1201,6 +1288,13 @@ button {
   .ep-closing .sig {
     font-size: clamp(16px, 4.4vw, 19px);
     padding: 0 8px;
+  }
+  .ep-closing-question {
+    font-size: clamp(16px, 4.5vw, 20px);
+    margin-bottom: 20px;
+  }
+  .ep-closing-brand {
+    font-size: clamp(22px, 5.5vw, 30px);
   }
   .ep-divider {
     margin: 44px auto;

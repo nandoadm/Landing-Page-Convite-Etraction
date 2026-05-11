@@ -51,8 +51,8 @@ export default function PremiumInvitationPage() {
         <Letter />
         <Invitation />
         <Experience />
-        <Closing />
         <FormSection />
+        <Closing />
         <Footer />
       </main>
 

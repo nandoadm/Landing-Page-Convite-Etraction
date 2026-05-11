@@ -5,19 +5,26 @@ export default function Closing() {
     <section className="ep-section">
       <div className="ep-wrap ep-closing">
         <Reveal>
-          <h2>
-            Isso não é mais um convite.
-            <br />
-            <em>É um acesso.</em>
-          </h2>
+          <div className="ep-closing-question">
+            Você acha que acaba por aqui?
+          </div>
         </Reveal>
 
         <Reveal delay={160}>
-          <div className="ep-divider" />
+          <h2>
+            Em breve,
+            <br />
+            <em>ainda mais novidades.</em>
+          </h2>
         </Reveal>
 
         <Reveal delay={260}>
-          <p className="sig">Você foi colocado nesse grupo por um motivo.</p>
+          <div className="ep-divider" />
+        </Reveal>
+
+        <Reveal delay={360}>
+          <div className="ep-closing-brand">Etraction Partner Premium</div>
+          <p className="sig">está só começando.</p>
         </Reveal>
       </div>
     </section>

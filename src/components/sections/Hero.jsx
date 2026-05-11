@@ -22,6 +22,12 @@ export default function Hero({ onContinue }) {
           <p className="ep-hero-sub">Porque ela não é pra todo mundo.</p>
         </Reveal>
 
+        <Reveal delay={320}>
+          <div className="ep-hero-title">
+            <h2>Você agora é Etraction Partner Premium.</h2>
+          </div>
+        </Reveal>
+
         <Reveal delay={360}>
           <div className="ep-hero-meta">
             <span>11 junho 2026</span>
